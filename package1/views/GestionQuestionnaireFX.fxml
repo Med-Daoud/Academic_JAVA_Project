@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="projet_java.package1.controllers.GestionQuestionnaireController">
+    <top>
+        <Label text="Gestion du Questionnaire" style="-fx-font-size: 22px; -fx-font-weight: bold;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+        </Label>
+    </top>
+    <center>
+        <HBox spacing="30" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <VBox spacing="10">
+                <Label text="Liste des questions :" style="-fx-font-size: 16px;"/>
+                <ListView fx:id="listQuestions" prefWidth="350" prefHeight="350"/>
+            </VBox>
+            <VBox spacing="15" prefWidth="400">
+                <Label text="Énoncé de la question :"/>
+                <TextField fx:id="txtEnnonce"/>
+                <Label text="Choix :" style="-fx-font-size: 15px;"/>
+                <TextField fx:id="txtChoix" promptText="Ajouter un choix"/>
+                <Button text="Ajouter choix" onAction="#ajouterChoix"/>
+                <ListView fx:id="listChoix" prefHeight="150"/>
+                <Label text="Réponse correcte (index) :"/>
+                <TextField fx:id="txtReponse"/>
+                <HBox spacing="10">
+                    <Button text="Ajouter question" onAction="#ajouterQuestion"/>
+                    <Button text="Modifier question" onAction="#modifierQuestion"/>
+                    <Button text="Supprimer question" onAction="#supprimerQuestion"/>
+                </HBox>
+               
+            </VBox>
+              <Button text="Retour Au Menu" fx:id="btnMigration"
+        prefWidth="250" onAction="#btnRetourClicked"/>
+        </HBox>
+    </center>
+</BorderPane>

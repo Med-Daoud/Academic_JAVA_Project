@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="projet_java.package2.controllers.MigrationController"
+      spacing="20">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <!-- Section Pays -->
+    <TitledPane text="Gestion des Pays" expanded="true">
+        <VBox spacing="10">
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </padding>
+
+            <HBox spacing="5">
+                <TextField fx:id="tfPaysName" promptText="Nom du pays" />
+                <TextField fx:id="tfPaysCode" promptText="Code ISO" />
+                <Button text="Ajouter" onAction="#ajouterPays"/>
+                <Button text="Supprimer" onAction="#supprimerPays"/>
+            </HBox>
+
+            <ListView fx:id="lvPays" prefHeight="350"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Section Personnel -->
+    <TitledPane text="Gestion du Personnel" expanded="true">
+        <VBox spacing="10">
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </padding>
+
+            <GridPane hgap="10" vgap="10">
+                <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Nom:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersNom" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Prénom:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersPrenom" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Adresse:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersAdresse" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Téléphone:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersTel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Date Naissance:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="dpPersDateNaissance" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Pays:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbPersPays" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                <Label text="Profession:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersProfession" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <Label text="Entreprise:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersEntreprise" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                <Label text="Salaire:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPersSalaire" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="Ajouter Personnel" onAction="#ajouterPersonnel"/>
+                <Button text="Supprimer Personnel" onAction="#supprimerPersonnel"/>
+            </HBox>
+             <Button text="Retour Au Menu" fx:id="btnMigration"
+            prefWidth="250" onAction="#btnRetourClicked"/>
+        </VBox>
+    </TitledPane>
+
+    <VBox>
+        
+         <TitledPane text="Personnels Creés " expanded="true">
+         <ListView fx:id="lvPersonnel" prefHeight="450"/>
+         </TitledPane>
+    </VBox>
+
+</HBox>

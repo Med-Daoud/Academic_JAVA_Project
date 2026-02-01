@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="projet_java.package2.controllers.MenuController"
+            prefWidth="600" prefHeight="400">
+
+    <top>
+        <Label text="Menu Principal"
+               style="-fx-font-size: 24px; -fx-font-weight: bold;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="30">
+         <Button text="Gestion Migration" fx:id="btnMigration"
+        prefWidth="250" onAction="#btnMigrationClicked"/>
+
+        <Button text="Gestion Questionnaire" fx:id="btnQuestionnaire"
+        prefWidth="250" onAction="#btnQuestionnaireClicked"/>
+
+        <Button text="Passer un Questionnaire" fx:id="btnPasser"
+        prefWidth="250" onAction="#btnPasserClicked"/>
+        <Button text="Gestion Dossier" fx:id="btnDossier"
+        prefWidth="250" onAction="#btnDossierClicked"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>
